@@ -1,21 +1,29 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { Component } from 'react';
+import { View, Text } from 'react-native';
+import styled from 'styled-components/native';
+import LinearGradient from 'react-native-linear-gradient';
 
-export default function App() {
+const App = () => {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <LinearGradient colors={['#4c669f', '#3b5998', '#192f6a']}>
+      <Container source={require('./assets/bg-lines.svg')}>
+        <Header>
+          <Text>Test</Text>
+        </Header>
+        <WeatherContent></WeatherContent>
+      </Container>
+    </LinearGradient>
   );
-}
+};
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+const Container = styled.ImageBackground`
+  flex: 1;
+`;
+
+const Header = styled.View`
+  display: flex;
+`;
+
+const WeatherContent = styled.View``;
+
+export default App;
