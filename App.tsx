@@ -1,20 +1,31 @@
-import React, { Component } from 'react';
-import { View, Text } from 'react-native';
-import styled from 'styled-components/native';
-import LinearGradient from 'react-native-linear-gradient';
+import React, { Component } from "react";
+import { View, Text } from "react-native";
+import styled from "styled-components/native";
+import { LinearGradient } from "expo-linear-gradient";
 
 const App = () => {
   return (
-    <LinearGradient colors={['#4c669f', '#3b5998', '#192f6a']}>
-      <Container source={require('./assets/bg-lines.svg')}>
+    <LinearGradientContainer colors={["#47BFDF", "#4A91FF"]}>
+      <Container source={require("./assets/bg-lines.svg")}>
         <Header>
-          <Text>Test</Text>
+          <LocalIcon source={require("./assets/localization.svg")} />
         </Header>
         <WeatherContent></WeatherContent>
       </Container>
-    </LinearGradient>
+    </LinearGradientContainer>
   );
 };
+
+const LinearGradientContainer = styled(LinearGradient)`
+  flex: 1;
+`;
+
+const LocalIcon = styled.Image`
+  width: 24px;
+  height: 24px;
+  background: transparent;
+  resize-mode: center;
+`;
 
 const Container = styled.ImageBackground`
   flex: 1;

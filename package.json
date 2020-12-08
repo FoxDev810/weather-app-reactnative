@@ -8,12 +8,13 @@
     "eject": "expo eject"
   },
   "dependencies": {
+    "@types/styled-components": "^5.1.4",
     "expo": "~39.0.2",
+    "expo-linear-gradient": "^8.3.1",
     "expo-status-bar": "~1.0.2",
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-native": "https://github.com/expo/react-native/archive/sdk-39.0.4.tar.gz",
-    "react-native-linear-gradient": "^2.5.6",
     "react-native-web": "~0.13.12",
     "styled-components": "^5.2.1"
   },
