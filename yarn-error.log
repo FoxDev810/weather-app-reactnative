@@ -1,8 +1,8 @@
 Arguments: 
-  /snap/node/3292/bin/node /snap/node/3292/bin/yarn.js add @expo-google-fonts/overpass expo-font@~8.3.0
+  /snap/node/3292/bin/node /snap/node/3292/bin/yarn.js add expo-font@~8.3.0 @expo-google-fonts/overpass
 
 PATH: 
-  /home/guilherme/.npm-global/bin:/home/guilherme/.local/bin:/opt/firefox:/home/guilherme/.local/bin:/home/guilherme/.local/bin:/opt/firefox:/home/guilherme/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+  /home/guilherme/.local/bin:/home/guilherme/.local/bin:/opt/firefox:/home/guilherme/.npm-global/bin:/home/guilherme/.npm-global/bin:/home/guilherme/.local/bin:/opt/firefox:/home/guilherme/.local/bin:/home/guilherme/.local/bin:/opt/firefox:/home/guilherme/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
 
 Yarn version: 
   1.22.5
@@ -4715,10 +4715,6 @@ Lockfile:
     version "16.13.1"
     resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"
     integrity sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==
-  
-  react-native-linear-gradient@react-native-community/react-native-linear-gradient:
-    version "2.5.6"
-    resolved "https://codeload.github.com/react-native-community/react-native-linear-gradient/tar.gz/ed06ac53ae4bb868ca83d5ec92e60e994ecb0124"
   
   react-native-safe-area-context@3.1.4:
     version "3.1.4"

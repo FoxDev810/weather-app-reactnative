@@ -1019,6 +1019,11 @@
   resolved "https://registry.yarnpkg.com/@emotion/unitless/-/unitless-0.7.5.tgz#77211291c1900a700b8a78cfafda3160d76949ed"
   integrity sha512-OWORNpfjMsSSUBVrRBVGECkhWcULOAJz9ZW8uK9qgxD+87M7jHRcvh/A96XXNhXTLmKcoYSQtBEX7lHMO7YRwg==
 
+"@expo-google-fonts/overpass@^0.1.0":
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/@expo-google-fonts/overpass/-/overpass-0.1.0.tgz#cce0802cb4a6550075fca7da63839dc4c718a3b7"
+  integrity sha512-xthPcHkMhl2Y0hFpVGwjQqoj9Sy6R8xsRjJ8+udJx3nmaKYLdZszFv+cG/aScnfz/Fo0xi+XmBlcLxSvnjoFeQ==
+
 "@expo/configure-splash-screen@0.2.0":
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/@expo/configure-splash-screen/-/configure-splash-screen-0.2.0.tgz#84f9f71363259f16fd0073636a198c750a3cdd7c"
@@ -2545,7 +2550,7 @@ expo-file-system@~9.2.0:
   dependencies:
     uuid "^3.4.0"
 
-expo-font@~8.3.0:
+expo-font@^8.3.0, expo-font@~8.3.0:
   version "8.3.0"
   resolved "https://registry.yarnpkg.com/expo-font/-/expo-font-8.3.0.tgz#f41955d1f1bbb2fe706bf97fc94aa89f7e599a0a"
   integrity sha512-WK3Oh3JwLjH/y94w1GPhE1Ix59WEJ9hTUKJBuvsM9SYqdN4N0DDb2VKhCH218HPdLURfyZnhMi2KrVycUWIUEQ==
