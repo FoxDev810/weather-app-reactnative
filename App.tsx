@@ -1,40 +1,59 @@
-import React, { Component } from "react";
-import { View, Text } from "react-native";
+import React from "react";
+import { AppLoading } from "expo";
+import { StatusBar, Platform } from "react-native";
 import styled from "styled-components/native";
 import { LinearGradient } from "expo-linear-gradient";
+import {
+  useFonts,
+  Overpass_700Bold,
+  Overpass_400Regular,
+} from "@expo-google-fonts/overpass";
+import { Search } from "./components/search";
+import { Provider } from "./provider";
+import { MainSection } from "./components/main-section";
 
 const App = () => {
-  return (
-    <LinearGradientContainer colors={["#47BFDF", "#4A91FF"]}>
-      <Container source={require("./assets/bg-lines.svg")}>
-        <Header>
-          <LocalIcon source={require("./assets/localization.svg")} />
-        </Header>
-        <WeatherContent></WeatherContent>
-      </Container>
-    </LinearGradientContainer>
+  const [isFontLoaded] = useFonts({
+    Overpass_700Bold,
+    Overpass_400Regular,
+  });
+
+  return !isFontLoaded ? (
+    <AppLoading />
+  ) : (
+    <Provider>
+      <LinearGradientContainer colors={["#47BFDF", "#4A91FF"]}>
+        <Container source={require("./assets/bg-lines.svg")}>
+          <SafeArea>
+            <Search />
+            <MainSection />
+          </SafeArea>
+        </Container>
+      </LinearGradientContainer>
+    </Provider>
   );
 };
 
-const LinearGradientContainer = styled(LinearGradient)`
+const SafeArea = styled.SafeAreaView`
   flex: 1;
+  align-items: center;
+  margin-top: ${Platform.OS === "android" ? StatusBar.currentHeight : "0"}px;
+  padding-top: 8%;
+  padding-bottom: 8%;
 `;
 
-const LocalIcon = styled.Image`
-  width: 24px;
-  height: 24px;
-  background: transparent;
-  resize-mode: center;
+const LinearGradientContainer = styled(LinearGradient)`
+  flex: 1;
 `;
 
 const Container = styled.ImageBackground`
   flex: 1;
 `;
 
-const Header = styled.View`
-  display: flex;
+export const Icon = styled.Image`
+  width: 24px;
+  height: 24px;
+  resize-mode: center;
 `;
-
-const WeatherContent = styled.View``;
 
 export default App;
