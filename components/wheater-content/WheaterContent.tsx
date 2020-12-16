@@ -1,45 +1,57 @@
 import React from "react";
 import styled from "styled-components/native";
-import { Icon } from "../../App";
+import { StatusBar } from "expo-status-bar";
+import { useWeather } from "../../provider/Provider";
 
-const WheaterContent = () => (
-  <WeatherContentContainer>
-    <StandardInfo>Today, 12 September</StandardInfo>
-    <Temperature>29°</Temperature>
-    <Climate>Cloudy</Climate>
-    <OtherInfoContainer>
-      <OtherInfo>
-        <StandardInfo>
-          <Wind source={require("../../assets/wind.png")} />
-          Wind
-        </StandardInfo>
-        <StandardInfoLast>
-          <Hum source={require("../../assets/hum.png")} />
-          Hum
-        </StandardInfoLast>
-      </OtherInfo>
-      <DivisorContainer>
-        <Divisor>|</Divisor>
-        <Divisor>|</Divisor>
-      </DivisorContainer>
-      <OtherInfo>
-        <StandardInfo>10 km/h</StandardInfo>
-        <StandardInfoLast>54%</StandardInfoLast>
-      </OtherInfo>
-    </OtherInfoContainer>
-  </WeatherContentContainer>
-);
+const WheaterContent = () => {
+  const {
+    state: {
+      currentLocal: { date, temperature, climate, wind, hum },
+    },
+  } = useWeather();
 
-const Wind = styled((props) => <Icon {...props} />)`
+  return (
+    <WeatherContentContainer>
+      <StatusBar backgroundColor="#47BFDF" />
+      <StandardInfo>Today, {date}</StandardInfo>
+      <Temperature>{temperature.toFixed(0)}°</Temperature>
+      <Climate>{climate}</Climate>
+      <OtherInfoContainer>
+        <Wind source={require("../../assets/wind.png")} />
+        <Hum source={require("../../assets/hum.png")} />
+        <OtherInfo>
+          <StandardInfo>Wind</StandardInfo>
+          <StandardInfo>Hum</StandardInfo>
+        </OtherInfo>
+        <OtherInfo>
+          <StandardView>
+            <Divisor>|</Divisor>
+            <StandardInfo>{wind} km/h</StandardInfo>
+          </StandardView>
+          <StandardView>
+            <Divisor>|</Divisor>
+            <StandardInfo>{hum} %</StandardInfo>
+          </StandardView>
+        </OtherInfo>
+      </OtherInfoContainer>
+    </WeatherContentContainer>
+  );
+};
+
+const Wind = styled.Image`
   position: absolute;
+  width: 20px;
+  height: 20px;
   left: -25px;
-  top: -2px;
+  top: 1px;
 `;
 
-const Hum = styled((props) => <Icon {...props} />)`
+const Hum = styled.Image`
   position: absolute;
+  width: 18px;
+  height: 21px;
   left: -25px;
-  bottom: -0px;
+  bottom: 3px;
 `;
 
 const WeatherContentContainer = styled.View`
@@ -57,42 +69,42 @@ const WeatherContentContainer = styled.View`
 
 const StandardInfo = styled.Text`
   color: #ffffff;
-  display: flex;
-  flex-direction: row;
+
   font-family: Overpass_400Regular;
   font-size: 18px;
   /* text shadow normal */
   text-shadow: -2px 3px 1px rgba(0, 0, 0, 0.1);
 `;
 
-const StandardInfoLast = styled(StandardInfo)`
-  margin-top: 16px;
-`;
-
-const DivisorContainer = styled.View`
-  margin-top: -9px;
-  margin-bottom: -9px;
-  justify-content: space-around;
+const StandardView = styled.View`
+  flex-direction: row;
 `;
 
 const Divisor = styled.Text`
   color: rgba(255, 255, 255, 0.9);
+  top: 2px;
+  left: -20px;
+  position: relative;
 `;
 
 const OtherInfoContainer = styled.View`
   flex-direction: row;
   justify-content: center;
-  margin-left: 20px;
+  max-height: 80px;
+  flex-basis: 23%;
   margin-top: 50px;
+  margin-left: 20px;
 `;
 
 const OtherInfo = styled.View`
-  padding: 0px 20px;
+  padding-horizontal: 20px;
+  justify-content: space-between;
 `;
 
 const Climate = styled.Text`
   color: white;
   font-family: Overpass_700Bold;
+  text-transform: capitalize;
   font-size: 24px;
   text-shadow: -2px 3px 1px rgba(0, 0, 0, 0.1);
 `;
