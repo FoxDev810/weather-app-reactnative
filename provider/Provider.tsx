@@ -9,10 +9,23 @@ import React, {
 
 enum ActionTypes {
   setIsSearchOpen = "SET_IS_SEARCH_OPEN",
+  setCurrentLocal = "SET_CURRENT_LOCAL",
+  setSearch = "SET_SEARCH",
 }
+
+type LocalObject = {
+  city: string;
+  date: string;
+  temperature: number;
+  climate: string;
+  wind: number;
+  hum: number;
+};
 
 type State = {
   isSearchOpen: boolean;
+  currentLocal: LocalObject;
+  search: string;
 };
 
 type Actions = {
@@ -41,6 +54,30 @@ export const useAppInfo = () => {
   };
 };
 
+export const useWeather = () => {
+  const context = useContext(Context);
+
+  if (!context) {
+    throw new Error("useWeather must be used inside a provider");
+  }
+
+  const [state, dispatch] = context;
+
+  const setCurrentLocal = (local: LocalObject) => {
+    dispatch({ type: ActionTypes.setCurrentLocal, payload: local });
+  };
+
+  const setSearch = (local: string) => {
+    dispatch({ type: ActionTypes.setSearch, payload: local });
+  };
+
+  return {
+    state,
+    setCurrentLocal,
+    setSearch,
+  };
+};
+
 const reducer = (state: State, { type, payload }: Actions) => {
   switch (type) {
     case ActionTypes.setIsSearchOpen:
@@ -48,11 +85,30 @@ const reducer = (state: State, { type, payload }: Actions) => {
         ...state,
         isSearchOpen: payload,
       };
+    case ActionTypes.setCurrentLocal:
+      return {
+        ...state,
+        currentLocal: payload,
+      };
+    case ActionTypes.setSearch:
+      return {
+        ...state,
+        search: payload,
+      };
   }
 };
 
 const initialState: State = {
   isSearchOpen: false,
+  currentLocal: {
+    city: "",
+    date: "",
+    temperature: 0,
+    climate: "",
+    wind: 0,
+    hum: 0,
+  },
+  search: "California",
 };
 
 const Provider = ({ children }: { children: ReactNode }) => {
