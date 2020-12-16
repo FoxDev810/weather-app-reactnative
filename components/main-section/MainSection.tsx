@@ -12,24 +12,25 @@ const MainSection = () => {
   return (
     <MainSectionContainer isSearchOpen={isSearchOpen}>
       <Header />
-      <Cloud source={require("../../assets/cloud.png")} />
+      <WeatherIllustration source={require("../../assets/cloud.png")} />
       <WheaterContent />
     </MainSectionContainer>
   );
 };
 
-type BlurTypes = {
+type MainTypes = {
   isSearchOpen: boolean;
 };
 
-const MainSectionContainer = styled.View<BlurTypes>`
+const MainSectionContainer = styled.View<MainTypes>`
+  opacity: ${({ isSearchOpen }) => (isSearchOpen ? "0.4" : "1")};
   flex: 1;
-  filter: ${({ isSearchOpen }) => (isSearchOpen ? "blur(0.5px)" : "0")};
+  width: 100%;
   justify-content: space-around;
   align-items: center;
 `;
 
-const Cloud = styled.Image`
+const WeatherIllustration = styled.Image`
   width: 190px;
   height: 190px;
   margin-right: 13px;
