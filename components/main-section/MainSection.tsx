@@ -28,6 +28,8 @@ const MainSectionContainer = styled.View<MainTypes>`
   width: 100%;
   justify-content: space-around;
   align-items: center;
+  z-index: ${({ isSearchOpen }) => (isSearchOpen ? -1 : 1)};
+  elevation: ${({ isSearchOpen }) => (isSearchOpen ? -1 : 1)};
 `;
 
 const WeatherIllustration = styled.Image`
