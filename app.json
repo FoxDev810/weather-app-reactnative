@@ -1,32 +1,37 @@
 {
   "expo": {
-    "name": "smooth-weather",
+    "privacy": "public",
+    "name": "Smooth Weather",
+    "description": "A simple but useful app to get the daily Weather information that you need.",
     "slug": "smooth-weather",
     "version": "1.0.0",
     "orientation": "portrait",
+    "githubUrl": "https://github.com/gsdeveloper/smooth-weather",
     "icon": "./assets/icon.png",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./assets/splash-img.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#4A91FF"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.gsdeveloper.smoothweather",
+      "buildNumber": "1.0.0"
     },
     "android": {
+      "package": "com.gsdeveloper.smoothweather",
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#FFFFFF"
-      }
+        "foregroundImage": "./assets/icon.png",
+        "backgroundColor": "#4A91FF"
+      },
+      "versionCode": 1
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./assets/icon.png"
     }
   }
 }
