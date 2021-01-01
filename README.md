@@ -14,7 +14,6 @@
 </a>
 <img alt="GitHub repo size" src="https://img.shields.io/github/repo-size/gsdeveloper/smooth-weather">
 <img alt="GitHub license" src="https://img.shields.io/github/license/gsdeveloper/smooth-weather">
-<img alt="GitHub package.json version" src="https://img.shields.io/github/package-json/v/gsdeveloper/smooth-weather">
 <img alt="React" src="https://img.shields.io/badge/React-JS-blue">
 </p>
 
@@ -92,7 +91,7 @@ See the section about [running tests](https://facebook.github.io/create-react-ap
 
 [![Linkedin Badge](https://img.shields.io/badge/-Guilherme%20Samuel-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/guilherme-samuel-2aa7aa19b/)](https://www.linkedin.com/in/guilherme-samuel-2aa7aa19b/)
 [![Gmail Badge](https://img.shields.io/badge/-gsdevelopercontact@gmail.com-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:tgmarinho@gmail.com)](mailto:gsdevelopercontact@gmail.com)
-[![Twitter Badge](https://img.shields.io/badge/-gsdeveloper-1ca0f1?style=flat-square&labelColor=1ca0f1&logo=twitter&logoColor=white&link=https://twitter.com/gsdeveloper)](https://twitter.com/gsdeveloper)
+[![Twitter Badge](https://img.shields.io/badge/-gsdeveloper-1ca0f1?style=flat-square&labelColor=1ca0f1&logo=twitter&logoColor=white&link=https://twitter.com/gsdeveloper_)](https://twitter.com/gsdeveloper_)
 
 ### License
 
