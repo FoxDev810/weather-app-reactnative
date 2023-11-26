@@ -78,14 +78,7 @@ See the section about [running tests](https://facebook.github.io/create-react-ap
 
 ---
 
-### Author
 
-<a href="gsdeveloper.github.io">
- <img style="border-radius: 50%;" src="https://avatars2.githubusercontent.com/u/49620737?s=460&u=affe940c45f9f14f3d456561e49e34d64e5b2078&v=4" width="100px;" alt=""/>
- <br />
-</a>
-<pre>Made with by 
-<a href="gsdeveloper.github.io">Guilherme Samuel</a></pre>
 
 👋🏽 Feel free to talk with me!
 
